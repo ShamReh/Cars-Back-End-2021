@@ -1,4 +1,4 @@
-insert into `cars` 
+insert into `cars1` 
 
 	(`age`, `brand`, `model`) 
 	
