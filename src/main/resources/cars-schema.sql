@@ -1,5 +1,5 @@
-drop table if exists cars1 CASCADE;
-create table cars1 
+drop table if exists cars CASCADE;
+create table cars 
 
 (
 
