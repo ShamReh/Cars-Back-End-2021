@@ -140,27 +140,4 @@ public class IntegrationTests {
 		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 	}
 
-	@Test
-	void testgetByBrand() throws Exception {
-
-		List<Cars> carsList = new ArrayList<>();
-		Cars found0 = new Cars(1, "Audi", "RS6", 2019);
-
-		carsList.add(found0);
-
-		String listAsJSON = this.mapper.writeValueAsString(carsList);
-
-		// create request
-		RequestBuilder request = get("/getByBrand/Audi");
-
-		// check response
-		ResultMatcher checkStatus = status().isAccepted();
-
-		ResultMatcher checkBody = content().json(listAsJSON);
-
-		// check response
-		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
-
-	}
-
 }

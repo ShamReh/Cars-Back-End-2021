@@ -71,9 +71,4 @@ public class CarsServiceDB implements CarsService {
 		return updated;
 	}
 
-	@Override
-	public List<Cars> getByBrand(String name) {
-		return this.repo.findByBrandIgnoreCase(name);
-	}
-
 }

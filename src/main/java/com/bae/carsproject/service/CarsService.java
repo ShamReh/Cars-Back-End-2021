@@ -16,6 +16,4 @@ public interface CarsService {
 
 	public Cars replaceCar(Cars newcar, int id);
 
-	List<Cars> getByBrand(String name);
-
 }
