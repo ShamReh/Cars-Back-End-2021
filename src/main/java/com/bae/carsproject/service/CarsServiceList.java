@@ -13,12 +13,6 @@ public class CarsServiceList implements CarsService {
 	public List<Cars> cars = new ArrayList<>();
 
 	@Override
-	public List<Cars> getByBrand(String name) {
-
-		return null;
-	}
-
-	@Override
 	public Cars createCar(Cars car1) {
 		System.out.println(car1);
 		this.cars.add(car1);

@@ -29,7 +29,7 @@ public class CarsController {
 		this.service = service;
 	}
 
-	@PostMapping("/createCar") // fancy
+	@PostMapping("/createCar")
 	public ResponseEntity<Cars> createCar(@RequestBody Cars car1) { // less fancy
 		// just Java
 		System.out.println(car1);
@@ -62,12 +62,6 @@ public class CarsController {
 		Cars body = this.service.replaceCar(newcar, id);
 		return new ResponseEntity<Cars>(body, HttpStatus.ACCEPTED);
 
-	}
-
-	@GetMapping("/getByBrand/{name}")
-	public ResponseEntity<List<Cars>> getByName(@PathVariable String name) {
-		List<Cars> body = this.service.getByBrand(name);
-		return new ResponseEntity<List<Cars>>(body, HttpStatus.ACCEPTED);
 	}
 
 }

@@ -23,7 +23,7 @@ public class UnitTests {
 	@Autowired // injects the actual service from the context
 	private CarsServiceDB service;
 
-	@MockBean // tells Spring to make a 'fake' KittenRepo that we can program
+	@MockBean // make a mock CarsRepo
 	private CarsRepo repo;
 
 	@Test
@@ -90,18 +90,6 @@ public class UnitTests {
 		Mockito.when(this.repo.findAll()).thenReturn(getAllCars);
 
 		assertThat(this.service.getAllCars()).isEqualTo(getAllCars);
-
-	}
-
-	@Test
-	void testGetByBrand() {
-
-		List<Cars> getAllCars = new ArrayList<>();
-		getAllCars.add(new Cars("BMW", "i8", 2017));
-
-		Mockito.when(this.repo.findByBrandIgnoreCase("BMW")).thenReturn(getAllCars);
-
-		assertThat(this.service.getByBrand("BMW")).isEqualTo(getAllCars);
 
 	}
 
